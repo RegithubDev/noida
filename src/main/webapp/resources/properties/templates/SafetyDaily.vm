@@ -1,0 +1,146 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Dashboard PROTECT - Safety First </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+<p>  Operated Date: $yes_date </p>
+<p>  Report Generation Date: $today_date </p>
+<p>  Report Type: Daily</p>
+
+                <table align="left"  cellpadding="0" cellspacing="0" width="80%"
+                    style="table-layout: fixed;">
+                    <tr>
+                        <td align="center" 
+                            style="color: black; font-size: 20px; font-weight: bold; font-family: Arial, sans-serif;padding: 10px;">
+                            <span>  <img src="https://appmint.resustainability.com/reirm/resources/images/logo/protect-main.png"
+                             alt="Protect Logo" style=" width: 9rem;  height: 3rem; vertical-align: bottom;"> </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 5px ;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td valign="middle">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+
+                                                        <thead>
+														<tr align="center" style="position: relative; background-color:#afeeee">
+														<td width="5%"  rowspan="2" colspan="1"
+                                                                    style="padding:8px 0;color: black; border: 1px solid #A0A3BB; font-family: Arial, sans-serif; font-size: 13px;position:sticky;top: 0;">
+                                                                    <b>Status</b>
+                                                                </td>
+															<td width="20%" colspan="4"
+                                                                    style="padding:4px 0;color: black; border: 1px solid #A0A3BB; font-family: Arial, sans-serif; font-size: 13px;position:sticky;top: 0;">
+                                                                    <b style="font-size: large;">Safety Incidents</b>
+                                                             </td>
+														</tr>
+                                                            <tr align="center" style="position: relative; background-color:#afeeee">
+  																
+                                                                <td width="20%"
+                                                                    style="padding:10px 0;color: black; border: 1px solid #A0A3BB; font-family: Arial, sans-serif; font-size: 13px;position:sticky;top: 0;">
+                                                                    <b>Accident</b>
+                                                                </td>
+                                                                <td width="20%"
+                                                                    style="padding:10px 0;color: black; border: 1px solid #A0A3BB; font-family: Arial, sans-serif; font-size: 13px;position:sticky;top: 0;">
+                                                                    <b>Near Miss</b>
+                                                                </td>
+                                                                <td width="20%"
+                                                                    style="padding:10px 0;color: black; border: 1px solid #A0A3BB; font-family: Arial, sans-serif; font-size: 13px;position:sticky;top: 0;">
+                                                                    <b>Unsafe Act</b>
+                                                                </td>
+                                                                <td width="20%"
+                                                                    style="padding:10px 0;color: black; border: 1px solid #A0A3BB; font-family: Arial, sans-serif; font-size: 13px;position:sticky;top: 0;">
+                                                                    <b>Unsafe Condition</b>
+                                                                </td>
+                                                            </tr>
+
+                                                        </thead>
+                                                        <tbody>
+                                                   
+                                                        	#foreach ($key in ${alerts.keySet()})                                                            
+                                                            <tr style="position: relative; #if($key == 'Total Count')     background-color: #c1cece   #end"  >
+                                                                <td colspan="1"
+                                                                    style="text-align: left; 	 color:black !important; border: 1px solid #A0A3BB;padding: 10px;font-weight: 600; position: sticky;top:30px;">
+                                                                    $key 
+                                                                </td>
+                                                           
+                                                            
+
+                                                            #foreach ($x in $alerts.get($key))
+                                                            	#if($x.AC && !$x.AC.empty)
+                                                                <td align="center" width="20%" 
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; word-wrap:break-word;">
+                                                                    
+                                                                 <b>  ( $x.AC )  </b>
+                                                                   
+                                                                </td>
+                                                                 #end
+                                                                
+                                                                #if($x.NM &&
+                                                                    !$x.NM.empty)
+                                                                <td  align="center" width="20%"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB;  word-wrap:break-word;">
+                                                                  <b>    ( $x.NM )</b>
+                                                                   
+                                                                </td>
+                                                                 #end
+                                                                 #if($x.UA && !$x.UA.empty)
+                                                                <td align="center" width="20%"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; word-wrap:break-word;">
+                                                                    
+                                                                <b>     ( $x.UA ) </b>
+                                                                   
+                                                                </td>
+                                                                 #end
+                                                                
+                                                                #if($x.UC &&
+                                                                    !$x.UC.empty)
+                                                                <td  align="center" width="20%"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB;  word-wrap:break-word;">
+                                                                   <b>   ( $x.UC )</b>
+                                                                   
+                                                                </td>
+                                                                 #end
+                                                         
+                                                            #end
+                                                            </tr>
+                                                            #end
+                                                             
+                                                        </tbody>
+                                                        <tr>
+                                                            <td
+                                                                style="padding: 25px 0 0 0; color: #22223B; font-family: Arial, sans-serif; font-size: 13px; line-height: 20px;">
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <br> <br> <br>
+           <p style=" font-family: Arial, sans-serif; font-size: 12px; color: grey; line-height: 20px;  width:80%" align="left" >
+                        Powered by </p>
+                            <span>  <img src="https://etimg.etb2bimg.com/photo/90117166.cms"
+                             alt="Protect Logo" style=" width: 6rem;  height: 5rem; vertical-align: bottom;"> </span>
+</body>
+
+</html>

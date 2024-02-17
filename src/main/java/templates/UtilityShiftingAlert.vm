@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>PMIS Utility Shifting Alert</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td style="padding: 10px 0 30px 0;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700px"
+                    style="border: 1px solid #cccccc; border-collapse: collapse;">
+                    
+                    <tr>
+						<td align="center"
+							style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+							$alert.mail_body_header
+						</td>
+					</tr>
+                    
+                    <tr>
+                        <td bgcolor="#f1f1f1" style="padding: 5px ;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td valign="middle">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        
+                                                        <tbody>
+                                                            <tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Work
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.work_short_name && !$alert.work_short_name.empty) 
+                                                                    	$alert.work_short_name
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Contract
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.contract_short_name && !$alert.contract_short_name.empty) 
+                                                                    	$alert.contract_short_name
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Category
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.utility_category_fk && !$alert.utility_category_fk.empty) 
+                                                                    	$alert.utility_category_fk
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Location Name
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.location_name && !$alert.location_name.empty) 
+                                                                    	$alert.location_name
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Reference Number
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.reference_number && !$alert.reference_number.empty) 
+                                                                    	$alert.reference_number
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Utility Description
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.utility_description && !$alert.utility_description.empty) 
+                                                                    	$alert.utility_description
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Owner Name
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.owner_name && !$alert.owner_name.empty) 
+                                                                    	$alert.owner_name
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+                                                            #if($alert.execution_agency_fk && !$alert.execution_agency_fk.empty) 
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Execution Agency
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.execution_agency_fk && !$alert.execution_agency_fk.empty) 
+                                                                    	$alert.execution_agency_fk
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+                                                            #end
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Utility Type
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="white-space: pre-wrap;padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    #if($alert.utility_type_fk && !$alert.utility_type_fk.empty) 
+                                                                    	$alert.utility_type_fk
+                                                                    #end
+                                                                </td>
+                                                            </tr>
+                                                            #if($alert.planned_completion_date && !$alert.planned_completion_date.empty) 
+															<tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Planned Completion Date
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    $alert.planned_completion_date
+                                                                </td>
+                                                            </tr>
+                                                            #end
+                                                            
+                                                            #if($alert.remarks && !$alert.remarks.empty) 
+                                                            <tr>
+																<td align="left" width="100px"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                     Remarks
+                                                                </td>
+																<td align="left" width="100px"
+                                                                    style="white-space: pre-wrap;padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; width: 170px; min-width: 170px; max-width: 170px; word-wrap:break-word;">
+                                                                    $alert.remarks
+                                                                </td>
+                                                            </tr>
+                                                             #end
+                                                        </tbody>
+                                                        <tr>
+                                                            <td
+                                                                style="padding: 25px 0 0 0; color: #22223B; font-family: Arial, sans-serif; font-size: 13px; line-height: 20px;">
+															</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#E3F2FD" style="padding: 4px">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td style=" font-family: Arial, sans-serif; font-size: 12px;" align="center">
+                                        &copy; $current_year @ mrvc.indianrailways.gov.in | Designed & Developed by <a
+                                            href="https://www.synergizglobal.com"><img src="https://syntrack-dev.s3.ap-south-1.amazonaws.com/SynergizGlobal/img/synergiz.png" alt="SynergizGlobal"
+                                                style=" width: 100px;  height: 25px; vertical-align: bottom;"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

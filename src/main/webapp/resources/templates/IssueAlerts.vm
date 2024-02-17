@@ -1,0 +1,140 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>PMIS $alert_type Alerts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td style="padding: 10px 0 30px 0;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="80%"
+                    style="border: 1px solid #cccccc; border-collapse: collapse;table-layout: fixed;">
+                    <tr>
+                        <td align="center" bgcolor="#22223B"
+                            style="color: #ffffff; font-size: 20px; font-weight: bold; font-family: Arial, sans-serif;padding: 10px;">
+                            <span>PMIS $alert_type Alerts</span>
+							<span style="float:right;">$today_date</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#f1f1f1" style="padding: 5px ;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td valign="middle">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+
+                                                        <thead>
+
+                                                            <tr align="center" style="position: relative;">
+
+                                                                <td width="15%"
+                                                                    style="padding:10px 0;color: #eeeeee; font-family: Arial, sans-serif; font-size: 13px;background-color:#4A4E69;position:sticky;top: 0;">
+                                                                    <b>HOD</b>
+                                                                </td>
+                                                                <td width="25%"
+                                                                    style="padding:10px 0;color: #eeeeee; font-family: Arial, sans-serif; font-size: 13px;background-color:#4A4E69;position:sticky;top: 0;">
+                                                                    <b> Contract name</b>
+                                                                </td>
+                                                                <td width="30%"
+                                                                    style="padding:10px 0;color: #eeeeee; font-family: Arial, sans-serif; font-size: 13px;background-color:#4A4E69;position:sticky;top: 0;">
+                                                                    <b>Reason for alert</b>
+                                                                </td>
+                                                                <td width="30%"
+                                                                    style="padding:10px 0;color: #eeeeee; font-family: Arial, sans-serif; font-size: 13px;background-color:#4A4E69;position:sticky;top: 0;width:300px">
+                                                                    <b>Action Taken</b>
+                                                                </td>
+                                                            </tr>
+
+                                                        </thead>
+                                                        <tbody>
+                                                        	#foreach ($key in ${alerts.keySet()})                                                            
+                                                            <tr style="position: relative;">
+                                                                <td colspan="4"
+                                                                    style="text-align: center;border: 1px solid #A0A3BB;padding: 10px;background-color: #cfcfcf;font-weight: 600; position: sticky;top:30px;">
+                                                                    $key
+                                                                </td>
+                                                            </tr>
+                                                            #foreach ($x in $alerts.get($key))
+                                                            <tr>
+                                                                <td align="center" width="15%"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; word-wrap:break-word;">
+                                                                    #if($x.hod && !$x.hod.empty)
+                                                                    $x.hod
+                                                                    #end
+                                                                </td>
+                                                                <td align="left" width="25%"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB;  word-wrap:break-word;">
+                                                                    #if($x.contract_short_name &&
+                                                                    !$x.contract_short_name.empty)
+                                                                    <a title="Work : $x.work_short_name &#013;Contractor : $x.contractor_name "
+                                                                        style="cursor: pointer;">
+                                                                        <img src="http://203.153.40.44/pmis/resources/images/alert_imgs/info.png" alt="info icon"
+                                                                            style="width:auto;height:20px;  vertical-align: middle;">
+                                                                    </a> $x.contract_short_name
+                                                                    #end
+                                                                </td>                                                                
+                                                                <td align="left" width="30%"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; word-wrap:break-word;">
+                                                                    #if($x.alert_value && !$x.alert_value.empty)
+                                                                    $x.alert_value
+                                                                    #end
+                                                                </td>
+                                                                <td align="left" width="30%"
+                                                                    style="padding: 10px;font-family: Arial, sans-serif; font-size: 12px; font-weight: 500; border:1px solid #A0A3BB; word-wrap:break-word;">
+                                                                    #if($x.remarks && !$x.remarks.empty)
+                                                                    $x.remarks
+                                                                    #end
+                                                                </td>
+
+                                                            </tr>
+                                                            #end
+                                                            #end
+                                                        </tbody>
+                                                        <tr>
+                                                            <td
+                                                                style="padding: 25px 0 0 0; color: #22223B; font-family: Arial, sans-serif; font-size: 13px; line-height: 20px;">
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#E3F2FD" style="padding: 4px">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td style=" font-family: Arial, sans-serif; font-size: 12px;" align="center">
+                                        <img src="http://203.153.40.44/pmis/resources/images/mrvclogo.png" alt="Logo" style=" width: 25px;  height: 25px; vertical-align: bottom;"> 
+                                        &copy; $current_year @ mrvc.indianrailways.gov.in | Designed & Developed by <a
+                                            href="https://www.synergizglobal.com"><img
+                                                src="https://syntrack-dev.s3.ap-south-1.amazonaws.com/SynergizGlobal/img/synergiz.png"
+                                                alt="SynergizGlobal"
+                                                style=" width: 100px;  height: 25px; vertical-align: bottom;"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
